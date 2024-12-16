@@ -2,7 +2,6 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  //background-color: #f4f4f4;
 }
 
 .post-container {
@@ -20,8 +19,13 @@ body {
   border-radius: 10px;
   overflow: hidden;
   background: #fff;
-  transition: transform 0.3s;
+  transition: transform 0.3s, max-height 0.3s ease, height 0.3s ease;
   cursor: pointer;
+  position: relative;
+}
+
+.post-card.expanded {
+  max-height: 1000px; /* Allow full text expansion */
 }
 
 .post-card:hover {
@@ -48,4 +52,6 @@ h3 {
   height: 3em;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
+  transition: height 0.3s ease;
 }
