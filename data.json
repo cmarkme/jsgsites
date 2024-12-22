@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Post 1",
+    "description": "This is a description for Post 1. It's amazing!",
+    "imageURL": "https://via.placeholder.com/300",
+    "link": "https://example.com/post1"
+  },
+  {
+    "title": "Post 2",
+    "description": "This is a description for Post 2. Learn more here.",
+    "imageURL": "https://via.placeholder.com/300",
+    "link": "https://example.com/post2"
+  },
+  {
+    "title": "Post 3",
+    "description": "Post 3 is all about exploring new things. Check it out!",
+    "imageURL": "https://via.placeholder.com/300",
+    "link": "https://example.com/post3"
+  }
+]
