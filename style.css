@@ -55,3 +55,14 @@ h3 {
   cursor: pointer;
   transition: height 0.3s ease;
 }
+
+.post-description {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.post-description:hover {
+  color: #0056b3;
+}
