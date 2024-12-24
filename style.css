@@ -12,6 +12,8 @@ body {
   padding: 20px;
   scroll-behavior: smooth; /* Smooth scrolling behavior */
   position: relative;
+  width: 100%; /* Add this */
+  max-width: 100%; /* Add this */
 }
 
 .post-card {
