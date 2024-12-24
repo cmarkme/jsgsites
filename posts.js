@@ -10,12 +10,35 @@ async function loadPosts(dataSource) {
     const postCard = document.createElement("div");
     postCard.className = "post-card";
 
+    // Shorten the description
+    const shortDescription = post.description.length > 150 
+      ? `${post.description.substring(0, 150)}...` 
+      : post.description;
+
     postCard.innerHTML = `
       <img src="${post.imageURL}" alt="${post.title}" class="post-image">
       <h3 class="post-title">${post.title}</h3>
-      <p class="post-description">${post.description}</p>
+      <p class="post-description" data-full-description="${post.description}">
+        ${shortDescription}
+      </p>
       <a href="${post.link}" class="post-link" target="_blank">Read More</a>
     `;
+
+    // Add event listener for toggling description
+    const descriptionElement = postCard.querySelector(".post-description");
+    descriptionElement.addEventListener("click", (e) => {
+      const isExpanded = descriptionElement.dataset.expanded === "true";
+
+      if (isExpanded) {
+        // Collapse to short description
+        descriptionElement.textContent = shortDescription;
+        descriptionElement.dataset.expanded = "false";
+      } else {
+        // Expand to full description
+        descriptionElement.textContent = post.description;
+        descriptionElement.dataset.expanded = "true";
+      }
+    });
 
     container.appendChild(postCard);
   });
