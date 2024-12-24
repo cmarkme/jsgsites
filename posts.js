@@ -11,8 +11,8 @@ async function loadPosts(dataSource) {
     postCard.className = "post-card";
 
     // Shorten the description
-    const shortDescription = post.description.length > 150 
-      ? `${post.description.substring(0, 150)}...` 
+    const shortDescription = post.description.length > 150
+      ? `${post.description.substring(0, 150)}...`
       : post.description;
 
     postCard.innerHTML = `
@@ -26,7 +26,7 @@ async function loadPosts(dataSource) {
 
     // Add event listener for toggling description
     const descriptionElement = postCard.querySelector(".post-description");
-    descriptionElement.addEventListener("click", (e) => {
+    descriptionElement.addEventListener("click", () => {
       const isExpanded = descriptionElement.dataset.expanded === "true";
 
       if (isExpanded) {
