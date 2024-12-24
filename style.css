@@ -4,27 +4,23 @@ body {
   padding: 0;
 }
 
-/* Disable inner scrolling behavior */
 #posts-container {
   display: flex;
-  flex-wrap: wrap; /* Allows posts to wrap to the next row */
-  gap: 20px; /* Spacing between posts */
-  justify-content: center; /* Center posts on the page */
-  align-items: flex-start;
-  overflow: visible; /* Ensure no internal scroll */
-  max-width: 100%; /* Prevent horizontal scrolling */
-  margin: 0 auto;
-  padding: 20px; /* Optional padding around posts */
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
 }
 
-/* Individual Post Styling */
 .post-card {
-  width: 300px; /* Adjust post card width */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  overflow: hidden; /* Disable internal scrolling */
-  background: #fff;
-  transition: transform 0.3s;
+  flex: 0 0 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .post-card.expanded {
@@ -76,3 +72,33 @@ h3 {
   width: 100%;
   height: auto;
 }
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.scroll-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+
