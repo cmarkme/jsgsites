@@ -16,5 +16,41 @@
     "description": "Post 3 is all about exploring new things. Check it out!",
     "imageURL": "https://via.placeholder.com/300",
     "link": "https://example.com/post3"
+  },
+  {
+    "title": "<h3>Post 2</h3>",
+    "description": "This is a description for Post 2. Learn more here.",
+    "imageURL": "https://via.placeholder.com/300",
+    "link": "https://example.com/post2"
+  },
+  {
+    "title": "<h3>Post 3</h3>",
+    "description": "Post 3 is all about exploring new things. Check it out!",
+    "imageURL": "https://via.placeholder.com/300",
+    "link": "https://example.com/post3"
+  },
+  {
+    "title": "<h3>Post 2</h3>",
+    "description": "This is a description for Post 2. Learn more here.",
+    "imageURL": "https://via.placeholder.com/300",
+    "link": "https://example.com/post2"
+  },
+  {
+    "title": "<h3>Post 3</h3>",
+    "description": "Post 3 is all about exploring new things. Check it out!",
+    "imageURL": "https://via.placeholder.com/300",
+    "link": "https://example.com/post3"
+  },
+  {
+    "title": "<h3>Post 2</h3>",
+    "description": "This is a description for Post 2. Learn more here.",
+    "imageURL": "https://via.placeholder.com/300",
+    "link": "https://example.com/post2"
+  },
+  {
+    "title": "<h3>Post 3</h3>",
+    "description": "Post 3 is all about exploring new things. Check it out!",
+    "imageURL": "https://via.placeholder.com/300",
+    "link": "https://example.com/post3"
   }
 ]
