@@ -11,14 +11,24 @@
       padding: 0;
     }
 
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 2em;
+    }
+
     #posts-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      display: flex;
       gap: 20px;
+      overflow-x: auto; /* Enable horizontal scrolling */
+      white-space: nowrap; /* Prevent wrapping of items */
       padding: 20px;
+      scroll-behavior: smooth; /* Smooth scrolling behavior */
+      position: relative;
     }
 
     .post-card {
+      flex: 0 0 300px; /* Fixed width for each card */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       padding: 20px;
       border-radius: 10px;
@@ -28,6 +38,7 @@
 
     .post-card img {
       max-width: 100%;
+      height: auto;
       border-radius: 5px;
     }
 
@@ -39,6 +50,9 @@
     .post-card p {
       font-size: 1em;
       margin-bottom: 15px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
 
     .post-card a {
@@ -50,56 +64,45 @@
     .post-card a:hover {
       text-decoration: underline;
     }
+
+    /* Arrows for manual scrolling */
+    .scroll-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #333;
+      cursor: pointer;
+      user-select: none;
+      z-index: 10;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-arrow {
+      left: 10px;
+    }
+
+    .right-arrow {
+      right: 10px;
+    }
+
+    .scroll-arrow:hover {
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+    }
   </style>
 </head>
 <body>
   <h1>Dynamic Posts</h1>
   <div id="posts-container"></div>
 
+  <!-- Arrows for scrolling -->
+  <div class="scroll-arrow left-arrow" id="scroll-left">&#9664;</div>
+  <div class="scroll-arrow right-arrow" id="scroll-right">&#9654;</div>
+
   <script src="posts.js"></script>
 </body>
 </html>
-
-
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post Selector</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="post-container">
-    <!-- Example Posts -->
-<!--
-    <div class="post-card" onclick="openPost('Post 1')">
-     <a href="https://cmarkme.github.io/Odyssey-Beyond-the-Universe/">
-       <img src="https://i.imgur.com/vuEAbYf.jpeg" alt="Post Image">
-     </a>
-      <div class="post-details">
-        <h3>short Story-Old Man In Space</h3>
-        <p class="truncated-text">
-          Guiding his thoughts toward a distant solar system billions of miles away, the sphere responded seamlessly. As the smaller orbs adjusted their positions around him in harmonious synchrony, a resonant sound began to emerge—a deep, rising hum that was not mechanical but organic, like the voices of hundreds of synchronized singers imitating the crescendo of a jet engine. It was magnificent, a celestial choir that echoed like distant thunder, amplifying the sense of anticipation. A surge of exhilaration coursed through him—the thrill of the uncharted, the promise of the adventure that lay ahead. As he gazed into the infinite expanse, a profound realization settled upon him: amidst the boundless cosmos, his own struggles seemed minuscule, yet his existence was intrinsically woven into this vast tapestry of stars and galaxies. The helmet—once a simple box now transformed—melded seamlessly with his mind, its advanced capabilities responding intuitively to his every thought. The sphere moved not through physical controls but by the subtle impulses of his consciousness, a marvel that transcended human technology. A bittersweet emotion stirred within him. Memories of Carolyn, her laughter, and the way she imitated his determined squint flooded back. Was she somewhere out there among the stars? The thought brought a mix of solace and longing. Leaving behind the weight of his past, he felt both liberated and melancholic, the ties to his former life stretching yet not severing. A subtle unease whispered at the edges of his excitement. What mysteries awaited in that distant solar system? The unknown loomed vast and unpredictable, holding both wonder and potential peril. But the uncertainty only fueled his resolve; the journey itself was a destination.The sphere hummed softly—a sensation more than a sound—resonating through him. The ethereal glow of the smaller orbs cast shifting patterns of light and shadow within the craft. He became acutely aware of the coolness of the helmet against his skin, the gentle vibrations coursing through his being, the sight of galaxies unfurling before him. Immersed in this symphony of sensations, he felt truly alive—every sense attuned to the extraordinary voyage unfolding.
-This was just the beginning. He was no longer trapped in the attic, no longer confined by the darkness of his mind. He had found a way out, a way to escape—not just from his own despair, but from the very limits of Earth
-        </p>
-      </div>
-    </div>
-
-    <div class="post-card" onclick="openPost('Post 2')">
-      <img src="https://via.placeholder.com/200x120" alt="Post Image">
-      <div class="post-details">
-        <h3>Post 2</h3>
-        <p class="truncated-text">
-          Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy...
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>-->
-
-
-
