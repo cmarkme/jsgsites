@@ -42,6 +42,65 @@ async function loadPosts(dataSource) {
 
     container.appendChild(postCard);
   });
+
+  // Initialize auto-scrolling
+  initializeAutoScroll(container);
+}
+
+function initializeAutoScroll(container) {
+  let isManualScroll = false;
+  let scrollInterval;
+
+  // Start auto-scrolling
+  function startAutoScroll() {
+    scrollInterval = setInterval(() => {
+      container.scrollBy({ left: 2, behavior: "smooth" });
+    }, 20);
+  }
+
+  // Stop auto-scrolling
+  function stopAutoScroll() {
+    clearInterval(scrollInterval);
+  }
+
+  // Resume auto-scrolling after a delay
+  function resumeAutoScroll() {
+    stopAutoScroll();
+    setTimeout(startAutoScroll, 3000); // 3 seconds delay before resuming
+  }
+
+  // Event listeners for manual scrolling
+  container.addEventListener("mousedown", stopAutoScroll);
+  container.addEventListener("touchstart", stopAutoScroll);
+  container.addEventListener("scroll", () => {
+    isManualScroll = true;
+    resumeAutoScroll();
+  });
+
+  // Add navigation arrows
+  const leftArrow = document.createElement("div");
+  leftArrow.className = "scroll-arrow left-arrow";
+  leftArrow.innerHTML = "&#9664;"; // Left arrow symbol
+  leftArrow.addEventListener("click", () => {
+    stopAutoScroll();
+    container.scrollBy({ left: -300, behavior: "smooth" });
+    resumeAutoScroll();
+  });
+
+  const rightArrow = document.createElement("div");
+  rightArrow.className = "scroll-arrow right-arrow";
+  rightArrow.innerHTML = "&#9654;"; // Right arrow symbol
+  rightArrow.addEventListener("click", () => {
+    stopAutoScroll();
+    container.scrollBy({ left: 300, behavior: "smooth" });
+    resumeAutoScroll();
+  });
+
+  container.parentElement.appendChild(leftArrow);
+  container.parentElement.appendChild(rightArrow);
+
+  // Start auto-scrolling
+  startAutoScroll();
 }
 
 // Initialize posts
