@@ -43,12 +43,11 @@ async function loadPosts(dataSource) {
     container.appendChild(postCard);
   });
 
-  // Initialize auto-scrolling
+  // Initialize auto-scrolling after posts are loaded
   initializeAutoScroll(container);
 }
 
 function initializeAutoScroll(container) {
-  let isManualScroll = false;
   let scrollInterval;
 
   // Start auto-scrolling
@@ -73,7 +72,6 @@ function initializeAutoScroll(container) {
   container.addEventListener("mousedown", stopAutoScroll);
   container.addEventListener("touchstart", stopAutoScroll);
   container.addEventListener("scroll", () => {
-    isManualScroll = true;
     resumeAutoScroll();
   });
 
@@ -105,5 +103,5 @@ function initializeAutoScroll(container) {
 
 // Initialize posts
 document.addEventListener("DOMContentLoaded", () => {
-  loadPosts("data.json"); // Replace with your Google Sheets JSON link if using Sheets
+  loadPosts("data.json"); // Replace with your JSON file link
 });
