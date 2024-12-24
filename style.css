@@ -6,16 +6,16 @@ body {
 
 #posts-container {
   display: flex;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  white-space: nowrap;
   gap: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of items */
   padding: 20px;
+  scroll-behavior: smooth; /* Smooth scrolling behavior */
   position: relative;
 }
 
 .post-card {
-  flex: 0 0 300px;
+  flex: 0 0 300px; /* Ensure fixed width for each card */
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 10px;
