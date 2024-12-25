@@ -25,17 +25,15 @@ function initializeAutoScroll(container) {
   // Event listeners for manual scrolling
   container.addEventListener("mousedown", () => {
     stopAutoScroll();
-    delayedResumeAutoScroll();
   });
 
   container.addEventListener("touchstart", () => {
     stopAutoScroll();
-    delayedResumeAutoScroll();
   });
 
   container.addEventListener("scroll", () => {
     stopAutoScroll();
-    delayedResumeAutoScroll();
+    delayedResumeAutoScroll(); // Resume auto-scroll after delay
   });
 
   // Add navigation arrows
