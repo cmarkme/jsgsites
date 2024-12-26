@@ -5,6 +5,7 @@ function initializeAutoScroll(container) {
   // Start auto-scrolling
   function startAutoScroll() {
     scrollInterval = setInterval(() => {
+      console.log('hello');
       container.scrollBy({ left: 2, behavior: "smooth" });
     }, 20);
   }
