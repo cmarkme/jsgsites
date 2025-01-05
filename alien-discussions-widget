@@ -1,0 +1,58 @@
+<div style="margin: 20px; padding: 15px; background-color: #f8f8f8; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  <h3 style="font-family: 'Roboto', sans-serif; color: #333; text-align: center; font-size: 1.8em; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">
+    🌌 Latest Discussions
+  </h3>
+
+  <div style="margin-bottom: 15px; padding: 10px; border-bottom: 1px solid #ddd; transition: background-color 0.3s ease;">
+    <h4 style="margin: 0 0 5px; color: #007bff; cursor: pointer;" class="hover-title">Which sci-fi book inspired you the most?</h4>
+    <p style="font-size: 0.9em; color: #555;">Share your thoughts on the top sci-fi books that shaped your imagination.</p>
+    <a href="https://groups.google.com/g/alien-community" target="_blank" style="color: #007bff; text-decoration: none; font-weight: bold;" class="hover-link">
+      Join the Discussion
+    </a>
+  </div>
+
+  <div style="margin-bottom: 15px; padding: 10px; border-bottom: 1px solid #ddd; transition: background-color 0.3s ease;">
+    <h4 style="margin: 0 0 5px; color: #007bff; cursor: pointer;" class="hover-title">Fan Art Showcase: Alien Worlds</h4>
+    <p style="font-size: 0.9em; color: #555;">Check out the incredible alien landscapes shared by our community!</p>
+    <a href="https://groups.google.com/g/alien-community" target="_blank" style="color: #007bff; text-decoration: none; font-weight: bold;" class="hover-link">
+      View the Art
+    </a>
+  </div>
+</div>
+
+<!-- Link to Google Fonts -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  /* Add hover effects for the discussion cards */
+  div[style*="padding: 15px"] > div:hover {
+    background-color: #f0f8ff; /* Light blue highlight */
+    transform: scale(1.02); /* Slight zoom effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  }
+
+  /* Add a hover effect for the titles */
+  .hover-title:hover {
+    color: #0056b3; /* Darker blue */
+    text-decoration: underline;
+  }
+
+  /* Add a hover effect for the links */
+  .hover-link:hover {
+    color: #003d99; /* Even darker blue */
+    text-decoration: underline;
+  }
+</style>
+
+<!-- Optional JavaScript for Dynamic Content -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const discussionTitles = document.querySelectorAll(".hover-title");
+
+    discussionTitles.forEach((title) => {
+      title.addEventListener("click", () => {
+        alert("You clicked on: " + title.innerText);
+      });
+    });
+  });
+</script>
