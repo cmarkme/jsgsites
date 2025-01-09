@@ -1,35 +1,20 @@
-<div class="glide">
-  <div class="glide__track" data-glide-el="track">
-    <ul class="glide__slides">
-      <li class="glide__slide">
-        <div class="post-card">
-          <img src="https://via.placeholder.com/300" alt="Placeholder 1">
-          <h3>Post Title 1</h3>
-          <p>Post content or description 1...</p>
-          <a href="#">Read More</a>
-        </div>
-      </li>
-      <li class="glide__slide">
-        <div class="post-card">
-          <img src="https://via.placeholder.com/300" alt="Placeholder 2">
-          <h3>Post Title 2</h3>
-          <p>Post content or description 2...</p>
-          <a href="#">Read More</a>
-        </div>
-      </li>
-      <li class="glide__slide">
-        <div class="post-card">
-          <img src="https://via.placeholder.com/300" alt="Placeholder 3">
-          <h3>Post Title 3</h3>
-          <p>Post content or description 3...</p>
-          <a href="#">Read More</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <!-- Navigation and controls -->
-  <div data-glide-el="controls">
-    <button data-glide-dir="<">Prev</button>
-    <button data-glide-dir=">">Next</button>
-  </div>
-</div>
+const posts = [
+  { title: 'Post 1', img: 'https://via.placeholder.com/300', desc: 'Description 1', link: '#' },
+  { title: 'Post 2', img: 'https://via.placeholder.com/300', desc: 'Description 2', link: '#' },
+  { title: 'Post 3', img: 'https://via.placeholder.com/300', desc: 'Description 3', link: '#' }
+];
+
+const slidesContainer = document.querySelector('.glide__slides');
+posts.forEach(post => {
+  const slide = document.createElement('li');
+  slide.className = 'glide__slide';
+  slide.innerHTML = `
+    <div class="post-card">
+      <img src="${post.img}" alt="${post.title}">
+      <h3>${post.title}</h3>
+      <p>${post.desc}</p>
+      <a href="${post.link}">Read More</a>
+    </div>
+  `;
+  slidesContainer.appendChild(slide);
+});
