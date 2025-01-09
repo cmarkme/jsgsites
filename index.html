@@ -21,28 +21,21 @@
       font-size: 3em;
     }
 
-    #posts-container {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto; /* Enable horizontal scrolling */
-      white-space: nowrap; /* Prevent wrapping of items */
-      padding: 20px;
-      scroll-behavior: smooth; /* Smooth scrolling behavior */
-      position: relative;
+    .glide {
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .post-card {
-      flex: 0 0 300px; /* Fixed width for each card */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      border-radius: 10px;
-      background: #fff;
       text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .post-card img {
       max-width: 100%;
-      height: auto;
       border-radius: 5px;
     }
 
@@ -53,10 +46,7 @@
 
     .post-card p {
       font-size: 1em;
-      margin-bottom: 15px;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
+      color: #666;
     }
 
     .post-card a {
@@ -69,33 +59,44 @@
       text-decoration: underline;
     }
 
-    /* Arrows for manual scrolling */
-    .scroll-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      color: #333;
-      cursor: pointer;
-      user-select: none;
-      z-index: 10;
-      padding: 10px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 50%;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .left-arrow {
-      left: 10px;
-    }
-
-    .right-arrow {
-      right: 10px;
-    }
-
-    .scroll-arrow:hover {
-      background: rgba(0, 0, 0, 0.8);
+    /* Navigation Buttons */
+    button[data-glide-dir="<"],
+    button[data-glide-dir=">"] {
+      background-color: #333;
       color: #fff;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 10px;
+      border-radius: 5px;
+    }
+
+    button[data-glide-dir="<"]:hover,
+    button[data-glide-dir=">"]:hover {
+      background-color: #007bff;
+    }
+
+    /* Bullet Navigation */
+    .glide__bullets {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .glide__bullet {
+      width: 10px;
+      height: 10px;
+      margin: 5px;
+      background: #ccc;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+    }
+
+    .glide__bullet:hover,
+    .glide__bullet.glide__bullet--active {
+      background: #007bff;
     }
   </style>
 </head>
@@ -103,9 +104,16 @@
   <h1>Dynamic Posts</h1>
   <div class="glide">
     <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides"></ul>
+      <ul class="glide__slides"></ul>
     </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <!-- Navigation Arrows -->
+    <div data-glide-el="controls">
+      <button data-glide-dir="<">Prev</button>
+      <button data-glide-dir=">">Next</button>
+    </div>
+    <!-- Bullet Navigation -->
+    <div class="glide__bullets" data-glide-el="controls[nav]"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
 </body>
 </html>
