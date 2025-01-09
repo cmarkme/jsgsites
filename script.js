@@ -1,24 +1,13 @@
-function openPost(postTitle) {
-  alert(`You selected: ${postTitle}`);
-  // Replace with navigation logic or modal display
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const truncatedTextElements = document.querySelectorAll(".truncated-text");
-
-  truncatedTextElements.forEach((textElement) => {
-    textElement.addEventListener("click", () => {
-      const postCard = textElement.closest(".post-card");
-
-      // Toggle the expanded class to adjust height
-      postCard.classList.toggle("expanded");
-
-      // Update the text to indicate more/less
-      if (postCard.classList.contains("expanded")) {
-        textElement.classList.remove("truncated-text");
-      } else {
-        textElement.classList.add("truncated-text");
-      }
-    });
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  new Glide('.glide', {
+    type: 'carousel', // Carousel mode
+    startAt: 0,       // Start at the first slide
+    perView: 3,       // Show 3 slides at a time
+    gap: 20,          // Space between slides
+    autoplay: 3000,   // Auto-scroll every 3 seconds
+    breakpoints: {    // Responsive settings
+      1024: { perView: 2 },
+      600: { perView: 1 }
+    }
+  }).mount();
 });
