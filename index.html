@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Posts</title>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
+  <script src="posts.js" defer></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -100,8 +101,11 @@
 </head>
 <body>
   <h1>Dynamic Posts</h1>
-  <div id="posts-container"></div>
-  <script src="posts.js"></script>
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides"></ul>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
 </body>
 </html>
