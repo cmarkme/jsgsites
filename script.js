@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const glide = new Glide('.glide', {
+  // Initialize Glide.js AFTER the slides are added
+  new Glide('.glide', {
     type: 'carousel', // Carousel mode
     startAt: 0,       // Start at the first slide
     perView: 3,       // Show 3 slides at a time
@@ -9,8 +10,5 @@ document.addEventListener('DOMContentLoaded', function () {
       1024: { perView: 2 },
       600: { perView: 1 }
     }
-  });
-
-  // Mount Glide only after slides are added
-  glide.mount();
+  }).mount();
 });
